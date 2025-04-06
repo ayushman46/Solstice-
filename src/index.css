@@ -1,0 +1,127 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 224 71.4% 4.1%;
+    
+    --card: 0 0% 100%;
+    --card-foreground: 224 71.4% 4.1%;
+    
+    --popover: 0 0% 100%;
+    --popover-foreground: 224 71.4% 4.1%;
+    
+    --primary: 239 84.2% 67.1%;
+    --primary-foreground: 210 20% 98%;
+    
+    --secondary: 160 84.2% 40.1%;
+    --secondary-foreground: 210 20% 98%;
+    
+    --accent: 35 91.2% 50.8%;
+    --accent-foreground: 0 0% 100%;
+    
+    --muted: 220 14.3% 95.9%;
+    --muted-foreground: 220 8.9% 46.1%;
+    
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 239 84.2% 67.1%;
+    
+    --radius: 0.6rem;
+
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 224 71.4% 4.1%;
+    --sidebar-primary: 239 84.2% 67.1%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 220 14.3% 95.9%;
+    --sidebar-accent-foreground: 224 71.4% 4.1%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 239 84.2% 67.1%;
+  }
+  
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    
+    --primary: 239 84.2% 67.1%;
+    --primary-foreground: 0 0% 98%;
+    
+    --secondary: 160 84.2% 40.1%;
+    --secondary-foreground: 0 0% 98%;
+    
+    --accent: 35 91.2% 50.8%;
+    --accent-foreground: 0 0% 98%;
+    
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    
+    --sidebar-background: 240 10% 3.9%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 239 84.2% 67.1%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 240 4.9% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer utilities {
+  .chat-bubble-user {
+    @apply bg-primary text-primary-foreground rounded-2xl rounded-br-sm p-4;
+  }
+  
+  .chat-bubble-ai {
+    @apply bg-muted text-foreground rounded-2xl rounded-bl-sm p-4;
+  }
+  
+  .money-positive {
+    @apply text-secondary font-medium;
+  }
+  
+  .money-negative {
+    @apply text-destructive font-medium;
+  }
+
+  .gradient-heading {
+    @apply bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent;
+  }
+  
+  .achievement-badge {
+    @apply inline-flex items-center justify-center w-8 h-8 rounded-full bg-accent/20 text-accent-foreground;
+  }
+  
+  .achievement-unlocked {
+    @apply bg-accent text-accent-foreground;
+  }
+}
